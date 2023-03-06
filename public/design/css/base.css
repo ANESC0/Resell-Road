@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik+Gemstones&display=swap");
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: white;
+}
+
+footer {
+  background-color: #1e2022;
+  color: #52616b;
+  padding: 30px;
+}
+
+footer p {
+  margin-top: 0;
+}
+
+footer a {
+  font-size: 0.7em;
+  color: #999;
+  text-decoration: none;
+  margin-right: 50px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#navB {
+  background-color: #52616b;
+  color: #c9d6df;
+}
+#home {
+  background-image: url("../../assets/img/vetements.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  color: #f0f5f9;
+}
+
+a {
+  text-decoration: none;
+}
+.nav-link {
+  color: #c9d6df;
+  font-family: "Roboto", sans-serif;
+}
+.bg1 {
+  background-color: #52616b;
+}
+
+.def {
+}
+
+#intro {
+  background-color: #c9d6df;
+  font-family: "Roboto", sans-serif;
+}
+#intro-pt2 {
+  background-color: #c9d6df;
+  font-family: "Roboto", sans-serif;
+}
+#resume {
+  background-color: #c9d6df;
+}
+
+.element1 {
+  background-color: #52616b;
+  border-radius: 3px;
+  color: #c9d6df;
+  border: 2px solid #c9d6df;
+}
+
+.titre{
+  background-color: #52616b;
+  color: #c9d6df;
+}
