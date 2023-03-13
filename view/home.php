@@ -1,8 +1,9 @@
-<?php
+<!-- 
     $title = "Accueil";
 
     ob_start();
-?>
+    require("header.php");
+ -->
 
 <section id="intro" class="p-4 text-center">
 
@@ -76,7 +77,7 @@
 
             <div class="col-xl-7 ">
 
-                <img src="../public/assets/img/vetement.jpg" class="w-100 h-100">
+                <img src="public/assets/img/vetement.jpg" class="w-100 h-100">
             </div>
             <div class=" offset-xl-1 col-xl">
 
@@ -205,8 +206,8 @@
 </section>
 
 
-<?php
+<!-- 
     $content = ob_get_clean();
 
-    require('base.php');
-?>
+    require('base.php'); 
+-->

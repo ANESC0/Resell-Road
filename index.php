@@ -1,31 +1,94 @@
 <?php
+session_start();
 
-require('controller/controller.php');
+// imports 
+require('vendor/session/SessionHelper.php');
+// models
+require('model/UserModel.php');
+require('model/ProjectModel.php');
+require('model/ItemModel.php');
+// controllers
+require('controller/BaseController.php');
+require('controller/HomeController.php');
+require('controller/UserController.php');
+require('controller/ProjectController.php');
+
 
     try {
+
+        // si page n'est pas vide
+        
         if(isset($_GET['page'])) {
 
-            if($_GET['page'] == 'accueil') {
-                home();
-            }
-            else if($_GET['page'] == 'insc') {
-                if(!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_two']))  {
-                    addUser(htmlspecialchars($_POST['pseudo']), htmlspecialchars($_POST['email']),htmlspecialchars($_POST['password']),htmlspecialchars($_POST['password_two']));
-                }
-                else {
-                    formulaireUser();
-                }
-            }
-            else {
-                throw new Exception("Cette page n'existe pas ou a été supprimée.");
+            switch ($_GET['page']) {
+                    // Accueil
+                case 'home': 
+                    $controller = new HomeController();
+                    $controller->index();
+                    break;
+
+                    // Inscription
+                case 'signin':
+                    $controller = new UserController();
+                    $controller->signIn();
+                    break;
+
+                    // Connection
+                case 'login':
+                    $controller = new UserController();
+                    $controller->logIn();
+                    break;
+
+                    // Deconnection
+                case 'logout':
+                    $controller = new UserController();
+                    $controller->logOut();
+                    break;
+
+                    // Projets
+                case 'sales':
+                    if (empty($_GET['id'])){
+                        $idProj = 0;
+    
+                    } else {
+                        $idProj = $_GET['id'];
+    
+                    }
+                    $controller = new ProjectController();
+                    $controller->projects($idProj);
+                    break;
+
+                    // projet en detail
+                case 'project':
+                    if (empty($_GET['id'])){
+                        $idProj = 0;
+    
+                    } else {
+                        $idProj = $_GET['id'];
+    
+                    }
+                    $controller = new ProjectController();
+                    $controller->projectById($idProj);
+                    break;
+                    
+
+                    // si aucune page trouvée
+                default:
+                    throw new Exception("Cette page n'existe pas ou a été supprimée.");
+
+
             }
 
+
         }
+         // l'accueil est par defaut
         else {
-            home();
+            $controller = new HomeController();
+            $controller->index();
         }
     }
     catch(Exception $e) {
-        $error = $e->getMessage();
-        require('view/errorView.php');
+        $controller = new HomeController();
+        $controller->error($e->getMessage());
+      
     }
