@@ -12,6 +12,7 @@ class HomeController extends BaseController {
     $usePseudo = "Connexion";
     $isConnect = false;
     $d1='';
+    $d2="";
 
     if ($this->session->isVarExist('userSecret')) {
       $user = new UserModel();
@@ -44,6 +45,7 @@ class HomeController extends BaseController {
     $usePseudo = "Connexion";
     $isConnect = false;
     $d1='';
+    $d2='';
    
 
     if ($this->session->isVarExist('userSecret')) {

@@ -35,8 +35,15 @@ require('controller/ProjectController.php');
 
                     // Connection
                 case 'login':
+                    if (empty($_GET['redirect'])){
+                        $url = '?page=home';
+    
+                    } else {
+                        $url = $_GET['redirect'];
+    
+                    }
                     $controller = new UserController();
-                    $controller->logIn();
+                    $controller->logIn($url);
                     break;
 
                     // Deconnection
@@ -61,7 +68,7 @@ require('controller/ProjectController.php');
                     // projet en detail
                 case 'project':
                     if (empty($_GET['id'])){
-                        $idProj = 0;
+                        $idProj = 2;
     
                     } else {
                         $idProj = $_GET['id'];

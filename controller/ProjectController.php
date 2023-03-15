@@ -7,7 +7,7 @@
     }
 
 
-    public function Projects($index){
+    public function projects($index){
 
         $titleF = "Mes ventes - Resell Road";
         $usePseudo = "Connexion";
@@ -32,7 +32,7 @@
 
         $projectManager = new ProjectModel();
 
-        $d1 = $projectManager->getProjects($num);
+        $d1 = $projectManager->getProjects($index);
 
         $this->render('sales', $titleF ,$d1 , $d2, $usePseudo , $isConnect , '' , true);
 
@@ -64,14 +64,14 @@
        // on recupere le projet pour afficher tous les articles liées 
 
       $projectManager = new ProjectModel();
-      $d1 = $projectManager->getProject($num);
+      $d1 = $projectManager->getOneProject($num);
 
       // on recupere tous les articles
 
       $itemManager = new ItemModel();
-      $d2 = $itemManager->getItemsByProject();
+      $d2 = $itemManager->getItemsByProject($num);
 
-      $this->render('sales', $titleF ,$d1 , $d2, $usePseudo , $isConnect , '' , true);
+      $this->render('project', $titleF ,$d1 , $d2, $usePseudo , $isConnect , '' , true);
     }
 
 

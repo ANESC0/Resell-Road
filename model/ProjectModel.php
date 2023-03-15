@@ -101,14 +101,16 @@
 
     public function getOneProject($id){
 
-        $req = $this->bdd->query('SELECT * FROM project WHERE project_id = '.$id.'');
+        $req = $this->bdd->query('SELECT * FROM project WHERE project_id = '.$id.' LIMIT 1');
         $req->rowCount();
        
         if ($req==0) {
             return false;
         } else {
+
+        $result = $req->fetch(PDO::FETCH_OBJ);
             
-        return $req;
+        return $result;
 
         }
 

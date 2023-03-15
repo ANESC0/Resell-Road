@@ -105,7 +105,7 @@
 
 
                 <div class="modal-body">
-                    <form method="post" action="http://localhost/Resell-Road/index.php?page=login" class="p-2">
+                    <form method="post" action="http://localhost/Resell-Road/index.php?page=login&redirect=<?= $_SERVER['REQUEST_URI']?>" class="p-2">
                         <div style="background-color:#1e2022;" class="mb-2">
                             <img src="public/assets/logo/logo.png" class="figure-img img-fluid rounded">
                         </div>

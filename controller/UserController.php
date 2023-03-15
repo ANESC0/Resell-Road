@@ -74,7 +74,7 @@
 
    // Connexion d'un utilisateur existant
 
-   function logIn(){
+   function logIn($url){
 
 
       if(!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -106,7 +106,8 @@
                 exit();
 
             } else {
-                header('location: index.php?page=home');
+               
+                header('location: '.$url.'');
                 exit();
             }
 
