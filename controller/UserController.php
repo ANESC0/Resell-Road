@@ -15,25 +15,10 @@
          function signIn(){
 
          $titleF = "Inscription - Resell Road";
-         $usePseudo = "Connexion";
-         $isConnect = false;
          $d1='';
          $d2='';
 
-         if ($this->session->isVarExist('userSecret')) {
-            $user = new UserModel();
-            $user->findBySecret($this->session->getVar('userSecret'));
-            if (!$user) {
-               throw new Exception('Session corrompue !');
-            }
-            $usePseudo = $user->getPseudo();
-            }
-      
-            if($this->session->isVarExist('connect')){
-            $isConnect = true;
-      
-            }
-      
+         $dataCheck =$this->userCheckOut();
    
 
 
@@ -66,7 +51,7 @@
          }
          
       } else {
-        $this->render('signin', $titleF , $d1, $d2, $usePseudo  , $isConnect , '', false);
+         $this->render('signin', $titleF ,$d1 , $d2, $dataCheck[0] , $dataCheck[1] , $dataCheck[2] , '' , false);
       }
    }
 
@@ -102,7 +87,7 @@
             $userType = $user->getType();
 
             if ($userType == 2){
-                header('location: index.php?page=dashboard/admin');
+                header('location: index.php?page=dashboard');
                 exit();
 
             } else {

@@ -99,6 +99,28 @@
 
         // Methodes
 
+        // obtenir tous les articles
+        
+        public function getAllItems(){
+
+            $req = $this->bdd->prepare('SELECT * FROM item');
+            $req->rowCount();
+       
+                if ($req==0) {
+                    return false;
+                } else {
+                    
+                return $req;
+
+                }
+
+
+
+       }
+
+
+        // obtenir les articles par projets
+
         public function getItemsByProject($project){
 
             $req = $this->bdd->prepare('SELECT * FROM item WHERE project_id = ?');
@@ -114,6 +136,24 @@
                 }
 
 
+
+       }
+       
+       // obtenir un article par index
+
+       public function getOneItem($id){
+        $req = $this->bdd->query('SELECT * FROM item WHERE item_id = '.$id.' LIMIT 1');
+        $req->rowCount();
+       
+        if ($req==0) {
+            return false;
+        } else {
+
+        $result = $req->fetch(PDO::FETCH_OBJ);
+            
+        return $result;
+
+        }
 
        }
 

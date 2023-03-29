@@ -21,13 +21,13 @@
 
 
 
-                        <p class="p-3 mt-5 text-start bg-dark" style="color: white; border-radius: 5px;">
+                        <p class="p-3 mt-5 mb-4 text-start bg-dark" style="color: white; border-radius: 5px;">
                             <?= $d1->project_desc ?>
 
                         </p>
 
 
-                        <div class="tab1 mb-3">
+                        <div class="tab1 mb-4">
 
                             <table class="table">
                                 <thead>
@@ -79,7 +79,8 @@
 
                     <div class="col-lg-3" style="color: white;">
 
-                        <h2 class="bg-dark p-1" style="color: white; border-radius: 5px;"> Articles / <?= $d1->project_nbelement ?> </h2>
+                        <h2 class="bg-dark p-1" style="color: white; border-radius: 5px;"> Articles /
+                            <?= $d1->project_nbelement ?> </h2>
                         <ul class="bg-dark p-2" style="list-style-type: none; overflow-x: scroll; height: 600px">
 
                             <?php
@@ -89,7 +90,7 @@
                                 while ($compteur<$limite){
                                    
                                     echo '
-                                    <li class="article1 mt-1 p-2"><a href="?page=item&id='.$tabArt[$compteur+1].'">" '.$tabArt[$compteur].'</a> </li>
+                                    <li class="article1 mt-1 p-2"><a href="?page=article&id='.$tabArt[$compteur+1].'">" '.$tabArt[$compteur].'</a> </li>
                                     ';
                                     $compteur+=2;
                                 }
@@ -106,4 +107,4 @@
 
         </div>
     </div>
-    </div>
+</section>

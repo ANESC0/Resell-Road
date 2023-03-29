@@ -6,7 +6,7 @@
 
 
 
-        <form method="post" class="p-5">
+        <form method="post" class="p-5 container">
             <p>
                 <label for="pseudo" class="form-label">Pseudo</label>
                 <input type="text" name="pseudo" id="prenom" placeholder="Votre pseudo" class="form-control">

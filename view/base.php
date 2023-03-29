@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='public/design/css/base.css' rel="stylesheet">
+    <link href='design/css/base.css' rel="stylesheet">
 </head>
 
 <body>
@@ -54,10 +54,15 @@
                         <i class="fa-regular fa-user"></i> <span> ' . $userPseudo . '
                   </span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="?page=logout">Se déconnecter</a></li>
-                        
-                    </ul>';
+                    <ul class="dropdown-menu">';
+                    if ($isAdmin==true){
+
+                        echo '<li><a class="dropdown-item" href="?page=dashboard">Dashboard</a></li>';
+
+                     }
+                        echo '<li><a class="dropdown-item" href="?page=logout">Déconnexion</a></li>
+                        </ul>';
+
                     } else {
 
                         // sinon on affiche par defaut
@@ -105,9 +110,9 @@
 
 
                 <div class="modal-body">
-                    <form method="post" action="http://localhost/Resell-Road/index.php?page=login&redirect=<?= $_SERVER['REQUEST_URI']?>" class="p-2">
+                    <form method="post" action="http://localhost/Resell-Road/public/index.php?page=login&redirect=<?= $_SERVER['REQUEST_URI']?>" class="p-2">
                         <div style="background-color:#1e2022;" class="mb-2">
-                            <img src="public/assets/logo/logo.png" class="figure-img img-fluid rounded">
+                            <img src="assets/logo/logo.png" class="figure-img img-fluid rounded">
                         </div>
 
                         <p>

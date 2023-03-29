@@ -2,16 +2,19 @@
 session_start();
 
 // imports 
-require('vendor/session/SessionHelper.php');
+require('../vendor/session/SessionHelper.php');
+require('../vendor/image/ImageHelper.php');
 // models
-require('model/UserModel.php');
-require('model/ProjectModel.php');
-require('model/ItemModel.php');
+require('../model/UserModel.php');
+require('../model/ProjectModel.php');
+require('../model/ItemModel.php');
 // controllers
-require('controller/BaseController.php');
-require('controller/HomeController.php');
-require('controller/UserController.php');
-require('controller/ProjectController.php');
+require('../controller/BaseController.php');
+require('../controller/HomeController.php');
+require('../controller/UserController.php');
+require('../controller/ProjectController.php');
+require('../controller/ItemController.php');
+require('../controller/DashboardController.php');
 
 
     try {
@@ -55,20 +58,20 @@ require('controller/ProjectController.php');
                     // Projets
                 case 'sales':
                     if (empty($_GET['id'])){
-                        $idProj = 0;
+                        $idexProj = 0;
     
                     } else {
-                        $idProj = $_GET['id'];
+                        $idexProj = $_GET['id'];
     
                     }
                     $controller = new ProjectController();
-                    $controller->projects($idProj);
+                    $controller->projects($idexProj);
                     break;
 
                     // projet en detail
                 case 'project':
                     if (empty($_GET['id'])){
-                        $idProj = 2;
+                        $idProj = 1;
     
                     } else {
                         $idProj = $_GET['id'];
@@ -77,6 +80,31 @@ require('controller/ProjectController.php');
                     $controller = new ProjectController();
                     $controller->projectById($idProj);
                     break;
+                
+                    // article en detail
+                case 'article':
+                    if (empty($_GET['id'])){
+                        $idArticle = 1;
+    
+                    } else {
+                        $idArticle = $_GET['id'];
+    
+                    }
+                    $controller = new ItemController();
+                    $controller->getItem($idArticle);
+                    break;
+
+                case 'dashboard':
+                    $controller = new DashboardController();
+                    $controller->getContent();
+                    break;
+
+                case 'ajoutProjet':
+                    $controller = new DashboardController();
+                    $controller->addProject();
+                    break;
+
+
                     
 
                     // si aucune page trouvée
