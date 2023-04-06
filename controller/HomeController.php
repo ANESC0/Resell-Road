@@ -8,7 +8,7 @@ class HomeController extends BaseController {
 
   public function index() {
 
-    $titleF = "Accueil";
+    $titleF = "Accueil - Resell Road";
     $d1='';
     $d2="";
 

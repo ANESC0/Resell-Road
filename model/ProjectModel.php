@@ -110,13 +110,15 @@
      public function getProjects($num){
 
         $req = $this->bdd->query('SELECT * FROM project WHERE project_id > '.$num.' LIMIT 5');
-        $req->rowCount();
+        $result= $req->rowCount();
+        
        
-        if ($req==0 || $req==null) {
+        if ($result==0) {
             return false;
-        } else {
+        }
+        else {
             
-        return $req;
+            return $req;
 
         }
 
@@ -129,17 +131,54 @@
     public function getOneProject($id){
 
         $req = $this->bdd->query('SELECT * FROM project WHERE project_id = '.$id.' LIMIT 1');
-        $req->rowCount();
+        $result= $req->rowCount();
+        
        
-        if ($req==0) {
+        if ($result==0) {
+            return false;
+        }
+        else {
+
+            $result = $req->fetch(PDO::FETCH_OBJ);
+            
+            return $result;
+
+        }
+
+
+    }
+
+    // completer un objet project model avec les données d'un projet en bdd
+
+    public function completeProjectById($id){
+        $req = $this->bdd->query( 'SELECT * FROM project WHERE project_id= '.$id.'');
+        $result= $req->rowCount();
+        
+       
+        if ($result==0) {
             return false;
         } else {
+            // etape pour completer l'objet avec les données recupérées
 
         $result = $req->fetch(PDO::FETCH_OBJ);
+        $this->setId($result->project_id);
+        $this->setTitle($result->project_title);
+        $this->setDesc($result->project_desc);
+        $this->setCurrAmount($result->project_curramount);
+        $this->setGoalAmount($result->project_goalamount);
+        $this->setImg($result->project_img);
+        $this->setDate($result->project_date);
+        $this->setNbElement($result->project_nbelement);
+
+        return true;
+
+
+
             
         return $result;
 
         }
+
 
 
     }
@@ -151,7 +190,7 @@
 
         // on initalise l'objet qui va être ajoute en bdd
 
-        $this->setCurrAmount($this->getGoalAmount());
+        $this->setCurrAmount(0);
         $this->setNbElement(0);
 
         // on verifie si il y a une image
@@ -165,6 +204,67 @@
         $req = $this->bdd->prepare('INSERT INTO project(project_title, project_desc, project_curramount, project_goalamount, project_img, project_nbelement) VALUES(?, ?, ?, ?, ?, ?)');
         return $req->execute([$this->_title, $this->_desc, $this->_currAmount, $this->_goalAmount, $this->_img, $this->_nbElement]);
 
+
+    }
+
+
+    // Modifier un projet
+
+    public function updateProject(){
+
+        // on ajoute le projet
+
+        $req = $this->bdd->prepare('UPDATE project SET project_title= ?, project_desc= ?, project_goalamount= ?, project_img= ? WHERE project_id = ?');
+        return $req->execute(array($this->_title, $this->_desc, $this->_goalAmount, $this->_img, $this->_id));
+
+
+    }
+
+    // Modifier le montant courant du projet + le nb d'article dès l'ajout d'un article
+
+    public function updateProject2($purchasePrice,$salePrice){
+
+        // on récupère les anciennes valeurs et on incrémente
+        $this->setCurrAmount($this->getCurrAmount() + ($salePrice-$purchasePrice));
+        $this->setNbElement($this->getNbElement()+1);
+
+        
+
+        // on ajoute le projet
+
+        $req = $this->bdd->prepare('UPDATE project SET project_nbelement= ?, project_curramount= ? WHERE project_id = ?');
+        return $req->execute(array($this->_nbElement, $this->_currAmount, $this->_id));
+
+
+
+    }
+
+     // Modifier le montant courant du projet + le nb d'article dès la supression d'un article
+
+     public function updateProject3($purchasePrice,$salePrice){
+         // on récupère les anciennes valeurs et on incrémente
+         $this->setCurrAmount($this->getCurrAmount() - ($salePrice-$purchasePrice));
+         $this->setNbElement($this->getNbElement()-1);
+ 
+         
+ 
+         // on ajoute le projet
+ 
+         $req = $this->bdd->prepare('UPDATE project SET project_nbelement= ?, project_curramount= ? WHERE project_id = ?');
+         return $req->execute(array($this->_nbElement, $this->_currAmount, $this->_id));
+ 
+ 
+     }
+
+
+    // supprimer un projet
+
+    public function deleteProject($id){
+
+        // on supprime le projet
+
+        $req = $this->bdd->query('DELETE FROM project WHERE project_id = '.$id.'');
+        return $req;
 
     }
 

@@ -35,29 +35,31 @@
 
     public function projectById($num){
       
-      $titleF = "Road ".$num." - Resell Road";
-      
-      $dataCheck =$this->userCheckOut();
-
-       // on recupere le projet pour afficher tous les articles liées 
-
-      $projectManager = new ProjectModel();
-      $d1 = $projectManager->getOneProject($num);
-      if ($d1 != false){
-        $itemManager = new ItemModel();
-        $d2 = $itemManager->getItemsByProject($num);
-  
-        $this->render('project', $titleF ,$d1 , $d2, $dataCheck[0] , $dataCheck[1] , $dataCheck[2] , '' , false);
+        $titleF = "Road ".$num." - Resell Road";
+        $d1='';
+        $d2='';
         
-      } else {
-        header('location: index.php?page=sales');
-          exit();
+        $dataCheck =$this->userCheckOut();
 
-      }
+        // on recupere le projet pour afficher tous les articles liées 
 
-      // on recupere tous les articles
+        $projectManager = new ProjectModel();
+        $d1 = $projectManager->getOneProject($num);
+        if ($d1 != false){
+          $itemManager = new ItemModel();
+          $d2 = $itemManager->getItemsByProject($num);
+          
+          $this->render('project', $titleF ,$d1 , $d2, $dataCheck[0] , $dataCheck[1] , $dataCheck[2] , '' , false);
+          
+        } else {
+          header('location: index.php?page=sales');
+            exit();
 
-   
+        }
+
+        // on recupere tous les articles
+
+    
     }
 
 

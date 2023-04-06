@@ -10,14 +10,15 @@
 
         <div id="intro-Pt1">
             <div class="def p-2">
-                <h4 class="p-3 titre mb-4 fw-bold"> 1 - Qu'est-ce que le resell?</h4>
-                <p class="lead text-start"> Dans sa forme la plus simple, la revente consiste à posséder un article
+                <h1 class="p-3 titre mb-4"> 1 - Qu'est-ce que le resell?</h1>
+                <p class="lead text-sm-start"> Dans sa forme la plus simple, la revente consiste à posséder un article
                     extrêmement
                     demandé, généralement en version limitée, et à le revendre à un prix plus élevé à ceux qui n'ont pas
                     pu
                     se le procurer. 3 Etapes sont nécessaires si on veut comprendre le resell </p>
                 <div>
                     <img class="w-25 h-25" src="/public/assets/img/resell1.jpg">
+                    
                 </div>
 
             </div>
@@ -33,7 +34,7 @@
                         <i class="fas fa-magnifying-glass fa-stack-1x fa-inverse"></i>
 
                     </span>
-                    <h4 class="my-3 fw-bold">1ere étape - Chercher un produit</h4>
+                    <p class="h4 my-3 fw-bold">1ere étape - Chercher un produit</p>
                     <p class="lead">Il faut tout d'abord chercher un article à prix abordable, que ce soit dans un
                         magasin vintage ou dans un marché de seconde main dans l'idée de tirer un profit de cet achat
                     </p>
@@ -45,7 +46,7 @@
                         <i class="fas fa-photo-film fa-stack-1x fa-inverse"></i>
 
                     </span>
-                    <h4 class="my-3 fw-bold">2eme étape - Mettre en valeur le produit</h4>
+                    <p class="h4 my-3 fw-bold">2eme étape - Mettre en valeur le produit</p>
                     <p class="lead"> Après avoir acheté le produit il faut savoir le mettre en valeur afin d'attirer de
                         potentiels acheteurs. Plusieurs techniques sont possibles pour améliorer la visibilité et
                         l'apparence
@@ -58,7 +59,7 @@
                         <i class="fas fa-circle fa-stack-2x text-dark"></i>
                         <i class="fas fa-coins fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="my-3 fw-bold">3eme étape - vendre le produit</h4>
+                    <p class="h4 my-3 fw-bold">3eme étape - vendre le produit</p>
                     <p class="lead"> Une fois l'article exposé , on fixe le prix sur un site de second main et on le
                         vend afin de dégager un meilleur prix. On peut vendre un produit qui nous a couté 5 euros à 25
                         euros . Tout dépend de l'article en question.
@@ -69,12 +70,12 @@
 
             <div id="intro-pt2" class="container mt-5">
 
-                <h4 class="titre p-3">2 - Objectif</h4>
-                <p class="lead">Chaque jour je vous partagerais mes trouvailles et mes gains dans le but d'arriver à un
+                <h1 class="titre p-3">2 - Objectif</h1>
+                <p class="lead mt-4">Chaque jour je vous partagerais mes trouvailles et mes gains dans le but d'arriver à un
                     objectif
                     financier en partant de 10 euros jusqu'a un objectif. Tout ça aura pour but de vous montrer qu'il
                     est possible à n'importe qui de s'enrichir grâce au resell</p>
-                <div class="row p-5">
+                <div class="row p-3">
 
                     <div class="col-xl-7 ">
 
@@ -141,7 +142,7 @@
 
             </div>
             <div class="mt-5 container " id="intro-pt3">
-                <h4 class="titre p-3">3 - Ressources Utiles</h4>
+                <h1 class="titre p-3">3 - Ressources Utiles</h1>
 
                 <div class="row align-items mt-5">
                     <div class="col-lg">

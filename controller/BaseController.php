@@ -32,6 +32,7 @@ class BaseController {
       $useType=1;
       $isAdmin= false;
       $isConnect = false;
+      $userId=-1;
 
       
       if ($this->session->isVarExist('userSecret')) {
@@ -42,6 +43,7 @@ class BaseController {
         }
         $usePseudo = $user->getPseudo();
         $useType = $user->getType();
+        $userId = $user->getId();
       }
 
       if ($useType==2){
@@ -53,7 +55,7 @@ class BaseController {
   
       }
 
-      $checkData = array ( $usePseudo, $isConnect, $isAdmin);
+      $checkData = array ( $usePseudo, $isConnect, $isAdmin ,$userId);
       return $checkData;
 
     }

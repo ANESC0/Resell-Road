@@ -8,6 +8,7 @@ require('../vendor/image/ImageHelper.php');
 require('../model/UserModel.php');
 require('../model/ProjectModel.php');
 require('../model/ItemModel.php');
+require('../model/CommentModel.php');
 // controllers
 require('../controller/BaseController.php');
 require('../controller/HomeController.php');
@@ -94,15 +95,107 @@ require('../controller/DashboardController.php');
                     $controller->getItem($idArticle);
                     break;
 
+                    // dashboard admin
                 case 'dashboard':
                     $controller = new DashboardController();
                     $controller->getContent();
                     break;
 
+                    // dasboard / ajout d'un nouveau projet
                 case 'ajoutProjet':
                     $controller = new DashboardController();
                     $controller->addProject();
                     break;
+                      
+                     // dashboard // modification d'un projet
+                case 'modifProjet':
+                    $controller = new DashboardController();
+                    if (!empty($_GET['id'])){
+                        $idProjet = $_GET['id'];
+                        $controller->updateProject($idProjet);
+                    } else {
+                        $controller->getContent();
+                    }
+                    break;
+
+                    // dashboard supression d'un projet
+                case 'suppProjet':
+                    $controller = new DashboardController();
+                    if (!empty($_GET['id'])){
+                        $idProjet = $_GET['id'];
+                        $controller->deleteProject($idProjet);
+                    } else {
+                        $controller->getContent();
+                    }
+                    break;
+
+                    // ajout d'article
+                    case 'ajoutArticle':
+                        $controller = new DashboardController();
+                        $controller->addItem();
+                        break;
+                    
+                    // modification d'article / selection
+                    case 'selectArticle':
+                        $controller = new DashboardController();
+                        if (!empty($_GET['id'])){
+                            $idProjet = $_GET['id'];
+                            $controller->selectItem($idProjet);
+                        } else {
+                            $controller->getContent();
+                        }
+                        break;
+
+                    // modification d'article
+                    case 'modifArticle':
+                        $controller = new DashboardController();
+                        if (!empty($_GET['id'])){
+                            $idItem = $_GET['id'];
+                            $controller->updateItem($idItem);
+                        } else {
+                            $controller->getContent();
+                        }
+                        break;
+
+                    // suppression d'article
+                    case 'suppArticle':
+                        $controller = new DashboardController();
+                        if (!empty($_GET['id'])){
+                            $idArticle = $_GET['id'];
+                            $controller->deleteItem($idArticle);
+                        } else {
+                            $controller->getContent();
+                        }
+                        break;
+                    // suppression de commentaire
+                    case 'suppComment':
+                        $controller = new ItemController();
+                        if (!empty($_GET['id'])){
+                            $idComment = $_GET['id'];
+                            $controller->deleteComment($idComment);
+                        } else {
+                            $controller = new HomeController();
+                            $controller->index();
+                        }
+                        break;
+
+                    // modification de commentaire
+                    case 'modifComment':
+                    $controller = new ItemController();
+                        if (!empty($_GET['id'])){
+                            $idComment = $_GET['id'];
+                            $controller->updateComment($idComment);
+                        } else {
+                            $controller = new HomeController();
+                            $controller->index();
+                        }
+                        break;
+
+
+
+                          
+
+
 
 
                     

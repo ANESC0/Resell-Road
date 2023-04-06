@@ -121,3 +121,18 @@ a {
   background-color: white;
   height: 80vh;
 }
+
+.fitImg{
+  object-fit: cover;
+
+}
+
+#bgImg{
+  background-image: url('../../assets/project/base.jpg');
+  background-repeat : no-repeat; 
+  background-position :top center;
+  background-size : cover;}
+
+#selectItem{
+  height: 80vh;
+}

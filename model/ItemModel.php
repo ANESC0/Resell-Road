@@ -4,11 +4,11 @@
 
     // Attributs
     private $_id=-1;
+    private $_title;
     private $_desc;
     private $_picture;
     private $_purchasePrice;
     private $_salePrice;
-    private $_type;
     private $_brand;
     private $_project;
     private $_date;
@@ -25,6 +25,11 @@
       public function getId(){
         return $this->_id;
         }
+        
+        public function getTitle(){
+            return $this->_title;
+        }
+
 
         public function getDesc(){
             return $this->_desc;
@@ -41,9 +46,6 @@
             return $this->_salePrice;
         }
 
-        public function getType(){
-            return $this->_type ;
-        }
 
         public function getBrand(){
             return $this->_brand;
@@ -65,6 +67,10 @@
             $this->_id = $var;
         }
 
+        public function setTitle($var){
+            $this->_title = $var;
+        }
+
         public function setDesc($var){
             $this->_desc = $var;
         }
@@ -77,11 +83,6 @@
         public function setSalePrice($var){
             $this->_salePrice = $var;
         }
-
-        public function setType($var){
-            $this->_type = $var;
-        }
-
         public function setBrand($var){
             $this->_brand = $var;
         }
@@ -104,19 +105,20 @@
         public function getAllItems(){
 
             $req = $this->bdd->prepare('SELECT * FROM item');
-            $req->rowCount();
+            $result= $req->rowCount();
+        
        
-                if ($req==0) {
+                if ($result==0) {
                     return false;
                 } else {
-                    
-                return $req;
+                            
+                    return $req;
 
                 }
 
 
 
-       }
+        }
 
 
         // obtenir les articles par projets
@@ -125,12 +127,13 @@
 
             $req = $this->bdd->prepare('SELECT * FROM item WHERE project_id = ?');
             $req->execute([$project]);
-            $req->rowCount();
-       
-                if ($req==0) {
-                    return false;
-                } else {
-                    
+            $result= $req->rowCount();
+        
+        
+            if ($result==0) {
+                return false;
+            } else {
+                        
                 return $req;
 
                 }
@@ -143,17 +146,64 @@
 
        public function getOneItem($id){
         $req = $this->bdd->query('SELECT * FROM item WHERE item_id = '.$id.' LIMIT 1');
-        $req->rowCount();
+        $result= $req->rowCount();
+        
        
-        if ($req==0) {
+        if ($result==0) {
             return false;
-        } else {
+        }
+        else {
 
         $result = $req->fetch(PDO::FETCH_OBJ);
             
         return $result;
 
         }
+
+       }
+
+
+       // ajouter un article en bdd
+
+       public function addItem(){
+         // on ajoute l'item
+         $req = $this->bdd->prepare('INSERT INTO item(item_title, item_desc, item_sale, item_purchase, item_img, item_brand, project_id) VALUES(?, ?, ?, ?, ?, ?, ?)');
+         return $req->execute([$this->_title, $this->_desc, $this->_salePrice, $this->_purchasePrice, $this->_picture, $this->_brand, $this->_project]);
+ 
+
+
+       }
+
+
+       // modifier un article 
+
+       public function updateItem(){
+        
+        // on ajoute l'article
+
+        $req = $this->bdd->prepare('UPDATE item SET item_title= ?, item_desc= ?, item_purchase= ?, item_sale= ?, item_brand= ?, project_id= ?, item_img= ? WHERE item_id = ?');
+        return $req->execute(array($this->_title, $this->_desc, $this->_purchasePrice, $this->_salePrice ,$this->_brand , $this->_project ,$this->_picture, $this->_id));
+
+
+       }
+
+
+       // supprimer tous les articles qui ont le meme id de projet
+
+       public function deleteItemByProject($id){
+
+        $req = $this->bdd->query('DELETE FROM item WHERE project_id = '.$id.'');
+        return $req;
+
+
+       }
+
+       // supprimer l'article par son id
+
+       public function deleteItemById($id){
+        $req = $this->bdd->query('DELETE FROM item WHERE item_id = '.$id.'');
+        return $req;
+
 
        }
 

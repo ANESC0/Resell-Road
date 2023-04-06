@@ -19,6 +19,9 @@ class UserModel extends DbManager {
     }
 
     // Setters
+    public function setId($id){
+        $this->_id = $id;
+    }
     public function setPseudo($pseudo) {
         $this->_pseudo = $pseudo;
     }
@@ -89,6 +92,18 @@ class UserModel extends DbManager {
 			}
 
 		}
+        // pseudo en doublon?
+        $req = $this->bdd->prepare('SELECT COUNT(*) as numberPseudo FROM user WHERE user_pseudo = ?');
+		$req->execute([$this->_pseudo]);
+
+		while($pseudoVerification = $req->fetch()) {
+
+			if($pseudoVerification['numberPseudo'] != 0) {
+                throw new Exception("Votre pseudo est déjà utilisé par un autre utilisateur.");
+			}
+
+		}
+
 
 		// Chiffrement du mot de passe
 		$password = $this->hashPassword($this->_password);
@@ -116,6 +131,7 @@ class UserModel extends DbManager {
             $this->setSecret($user->user_secret);
             $this->setPassword($user->user_password);
             $this->setType($user->user_type);
+            $this->setId($user->user_id);
     
             return $this;
 
@@ -136,6 +152,7 @@ class UserModel extends DbManager {
             $this->setSecret($user->user_secret);
             $this->setPassword($user->user_password);
             $this->setType($user->user_type);
+            $this->setId($user->user_id);
     
             return $this;
         }

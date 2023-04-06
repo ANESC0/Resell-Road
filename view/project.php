@@ -11,10 +11,15 @@
 
                         <?php
                                 // on calcule le pourcentage de la barre
-                                $pourcentage = ($d1->project_curramount * 100) / $d1->project_goalamount;
+                                if($d1->project_curramount==0){
+                                    $pourcentage = 0;
+                                } else{
+                                    $pourcentage = ($d1->project_curramount * 100) / $d1->project_goalamount;
+                                }
+                               
                                  echo '
                                 <div class="progress">
-                                    <div class="progress-bar" style="width:'.$pourcentage.'">'.$d1->project_curramount.'€</div>
+                                    <div class="progress-bar" style="width:'.$pourcentage.'%">'.$d1->project_curramount.'€</div>
                                 </div>
                                 ';
                                 ?>
@@ -43,7 +48,8 @@
                                     <?php 
                                         // on stock dans un tableau le titre et l'id de l'article
                                         $tabArt = array();
-                                        // afficher tous les item du projet
+                                        if ($d2!=false){
+                                            // afficher tous les item du projet
                                         while ($items = $d2->fetch(PDO::FETCH_OBJ)){
                                             $benefice = $items->item_sale - $items->item_purchase;
                                             echo '
@@ -60,6 +66,9 @@
                                             array_push($tabArt, $items->item_id);
 
                                         }
+
+                                        }
+                                        
                                         ?>
                                     <tr class="table-primary">
                                         <td class="table-light">Sweat-shirt noir</td>
