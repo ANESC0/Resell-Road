@@ -1,7 +1,8 @@
 
     <section id="dashAddProject">
         <div class="container p-5">
-            <form method="post" enctype="multipart/form-data" class="mt-5">
+        <h1 class="bg-resellroad text-title rounded p-2 text-center"> Ajout de Projet </h1>
+            <form method="post" enctype="multipart/form-data" class="mt-5 p-3 bg-light rounded">
                 <p>
                     <label for="titre" class="form-label">Titre du projet</label>
                     <input type="text" name="titre" id="titre" class="form-control" required>
@@ -26,7 +27,7 @@
 
                 <p>
                     <label for="img">Sélectionnez votre fichier</label><br>
-                    <input type="file" name="img" id="img">
+                    <input type="file" class="form-control" name="img" id="img">
                 </p>
 
 

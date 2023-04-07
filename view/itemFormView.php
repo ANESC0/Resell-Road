@@ -1,7 +1,7 @@
 <section id="dashAddItem">
     <div class="container p-5">
-        <h1> Ajouter un article</h1>
-        <form method="post" enctype="multipart/form-data" class="mt-5 p-2">
+        <h1 class="bg-resellroad text-title rounded p-2 text-center"> Ajouter un article</h1>
+        <form method="post" enctype="multipart/form-data" class="mt-5 p-3 bg-light rounded">
             <p>
                 <label for="titre" class="form-label">Titre de l'article</label>
                 <input type="text" name="titre" id="titre" class="form-control" maxlength="60" required>
@@ -50,7 +50,7 @@
 
             <p>
                 <label for="img">Sélectionnez votre fichier</label><br>
-                <input type="file" name="img" id="img">
+                <input type="file" class="form-control" name="img" id="img">
             </p>
 
 

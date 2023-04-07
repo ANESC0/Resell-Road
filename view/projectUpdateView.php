@@ -1,7 +1,7 @@
 <section id="dashUpdateProject">
     <div class="container p-5">
-        <h1> Modification / Projet </h1>
-        <form method="post" enctype="multipart/form-data" class="mt-5">
+        <h1 class="bg-resellroad text-title rounded p-2 text-center"> Modification de Projet </h1>
+        <form method="post" enctype="multipart/form-data" class="mt-5 p-3 bg-light rounded">
             <p>
                 <label for="titre" class="form-label">Titre du projet</label>
                 <input type="text" name="titre" id="titre" placeholder="<?= $d1->project_title ?>" class="form-control">
@@ -28,7 +28,7 @@
             <p>
                 <img src="<?= $d1->project_img ?>" width="200px">
                 <br>
-                <input type="file" name="img" id="img">
+                <input type="file" class="form-control" name="img" id="img">
             </p>
 
 

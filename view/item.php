@@ -118,49 +118,7 @@
         }
         ?>
 
-        <div class="card mt-3">
-
-            <!-- En-tête de la carte -->
-            <div class="card-header">
-                <p> <img src="assets/avatar/default.jpg" height="50px" class="imgAvatar"> <span
-                        class="fs-5 text-color1 text-break">Anesco</span> </p>
-            </div>
-
-            <!-- Corps -->
-            <div class="card-body">
-
-                <p class="card-text">Article très interessant ! ou l'as tu trouvé!
-                </p>
-
-            </div>
-
-
-        </div>
-
-        <div class="card mt-3">
-
-            <!-- En-tête de la carte -->
-            <div class="card-header bg-dark text-white">
-                <p> <img src="assets/avatar/white.jpg" class="imgAvatar"> <span
-                        class="fs-5 p-2 text-color1 text-break">Paco</span> </p>
-            </div>
-
-            <!-- Corps -->
-            <div class="card-body p-3">
-
-                <p class="card-text">Article très interessant ! ou l'as tu trouvé!
-                    Article très interessant ! ou l'as tu trouvé!
-                    Article très interessant ! ou l'as tu trouvé!
-                    Article très interessant ! ou l'as tu trouvé!
-
-                    Article très interessant ! ou l'as tu trouvé!
-
-                </p>
-
-            </div>
-
-
-        </div>
+        
 
     </div>
 

@@ -92,7 +92,7 @@
                                 while ($compteur<$limite){
                                    
                                     echo '
-                                    <li class="article1 mt-1 p-2"><a href="?page=article&id='.$tabArt[$compteur+1].'">" '.$tabArt[$compteur].'</a> </li>
+                                    <li class="article1 mt-1 p-2"><a class="text-title" href="?page=article&id='.$tabArt[$compteur+1].'"> '.$tabArt[$compteur].'</a> </li>
                                     ';
                                     $compteur+=2;
                                 }
