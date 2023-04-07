@@ -138,6 +138,15 @@
 
     }
 
+    // Modifier un commentaire en bdd
+
+    public function updateCommentById($idComment){
+        $req = $this->bdd->prepare('UPDATE comment SET comment_desc= ? WHERE comment_id = ?');
+        return $req->execute(array($this->_desc, $idComment));
+
+
+    }
+
     // supprimer un commentaire par son id de projet
 
     public function deleteCommentByProject($id){

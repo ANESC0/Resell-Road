@@ -243,7 +243,7 @@ class DashboardController extends BaseController {
 
 
             public function deleteProject($projectId){
-                  $titleF = "Modification de projet - Resell Road";
+                  $titleF = "Supression de projet - Resell Road";
                   $d1='';
                   $d2='';
 
@@ -303,7 +303,7 @@ class DashboardController extends BaseController {
 
           // ajout d'article
                 public function addItem(){
-                  $titleF = "Modification de projet - Resell Road";
+                  $titleF = "Ajout d'article - Resell Road";
                   $d1='';
                   $d2='';
 
@@ -422,7 +422,7 @@ class DashboardController extends BaseController {
 
                     $itemModel = new ItemModel();
                     if ($itemModel->getItemsByProject($idProject)==false){
-                      throw new Exception("Impossible de trouver l'article");
+                      throw new Exception("Impossible de récupérer des articles, Le projet n'en contient aucun");
                       $d2 = $itemModel->getItemsByProject($idProject);
                     } 
                     $d2 = $itemModel->getItemsByProject($idProject);
@@ -437,7 +437,7 @@ class DashboardController extends BaseController {
           // modification de l'item
 
                 public function updateItem($idItem){
-                  $titleF = "Modification de projet - Resell Road";
+                  $titleF = "Modification d'article - Resell Road";
                   $d2='';
                   $dataCheck =$this->userCheckOut();
 

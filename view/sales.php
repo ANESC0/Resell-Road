@@ -24,7 +24,7 @@
 
 
                     <!-- En-tête de la carte -->
-                    <div class="card-header">
+                    <div class="card-header rounded text-white bg-resellroad">
                         '. $project->project_title .'
                     </div>
 
@@ -39,8 +39,8 @@
                     </div>
 
                     <!-- Pied -->
-                    <div class="card-footer p-0">
-                        <a href="index.php?page=project&id='.$project->project_id.'" class="card-link">En savoir plus</a>
+                    <div class="card-footer bg-resellroad rounded text-white p-0">
+                        <a href="index.php?page=project&id='.$project->project_id.'" class="card-link text-title">En savoir plus</a>
                         
                     </div>
                 </div>
@@ -53,10 +53,10 @@
 
 
                    ?>
-                   <span class="bg-dark">
-                   <a href="?page=sales&id=<?= $first-5 ?>" class="" style="font-size:36px"><i class="fa-solid fa-arrow-left"></i></a>
+                   <span class="bg-resellroad text-white">
+                   <a href="?page=sales&id=<?= $first-5 ?>" class="text-title" style="font-size:36px"><i class="fa-solid fa-arrow-left"></i></a>
 
-                <a href="?page=sales&id=<?= $idex+1 ?>" class="" style="font-size:36px"><i class="fa-solid fa-arrow-right"></i></a>
+                <a href="?page=sales&id=<?= $idex+1 ?>" class="text-title" style="font-size:36px"><i class="fa-solid fa-arrow-right"></i></a>
                 
             </span>
 

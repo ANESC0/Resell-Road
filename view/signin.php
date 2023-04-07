@@ -1,12 +1,12 @@
 
 <section id="signin" class="p-5">
     <div class="container">
-        <h1>S'inscrire</h1>
+        <h1 class="bg-resellroad text-title rounded h2 text-center p-2 mb-3">S'inscrire</h1>
 
 
 
 
-        <form method="post" class="p-5 container">
+        <form method="post" class="p-5 bg-light container rounded">
             <p>
                 <label for="pseudo" class="form-label">Pseudo</label>
                 <input type="text" name="pseudo" id="prenom" placeholder="Votre pseudo" class="form-control">
@@ -30,7 +30,7 @@
 
             </p>
 
-            <button  class="form-control" type="submit">S'inscrire</button>
+            <button  class="form-control bg-primary text-light" type="submit">S'inscrire</button>
 
 
         </form>

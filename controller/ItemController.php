@@ -117,5 +117,56 @@
 
 
 
+    public function updateComment($id){
+      $titleF = "Article ".$id." - Resell Road";
+      $d1='';
+        $d2='';
+
+        $dataCheck =$this->userCheckOut();
+
+        // verifier que le commentaire existe
+        $commentModel = new CommentModel();
+        $res = $commentModel->completeComment($id);
+        
+
+        if ( $res == false ){
+          throw new Exception("Imposible de récupérer le commentaire");
+
+        }
+        $d1=$commentModel;
+
+        
+        // verifier que l'utilisateur est le propriétaire du commentaire
+        if($commentModel->getUser()==$dataCheck[3]){
+          // on vérifie que l'entree du formulaire est complété
+        if (!empty($_POST['description'])){
+
+          // on complète le commentaire
+          $commentModel->setDesc(htmlspecialchars($_POST['description']));
+
+          // on ajoute la modification en bdd
+          if(!$commentModel->updateCommentById($commentModel->getId())){
+            throw new Exception("Imposible de modifier le commentaire");
+
+          }
+
+
+        } else {
+          // on affiche le formulaire
+          $this->render('commentUpdateView', $titleF ,$d1 , $d2, $dataCheck[0] , $dataCheck[1] , $dataCheck[2] , '' , false);
+        }
+
+
+
+
+
+
+    } else {
+      throw new Exception("Imposible de modifier ce commentaire");
+    }
+  }
+
+
+
 
   }

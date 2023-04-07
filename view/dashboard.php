@@ -6,7 +6,7 @@
       
         <div class="container p-5">
 
-        <h1 class="mb-5 text-center"> Dashboard </h1>
+        <h1 class="mb-5 p-2 text-title bg-resellroad text-center rounded"> Dashboard </h1>
 
             <div class="row">
                 <div class="col-lg">

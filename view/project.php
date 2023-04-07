@@ -70,14 +70,7 @@
                                         }
                                         
                                         ?>
-                                    <tr class="table-primary">
-                                        <td class="table-light">Sweat-shirt noir</td>
-                                        <td class="table-light">10€</td>
-                                        <td class="table-light">25€</td>
-                                        <td class="table-light">15€</td>
-
-
-                                    </tr>
+                                  
                                 </tbody>
                             </table>
                         </div>
@@ -105,7 +98,7 @@
                                 }
 
                                 ?>
-                            <li class="article1 mt-1 p-2"> 2 - Pull </li>
+                           
 
                         </ul>
                     </div>

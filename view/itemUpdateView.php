@@ -1,7 +1,7 @@
 <section id="dashUpdateItem">
     <div class="container p-5">
-        <h1> Modifier un article</h1>
-        <form method="post" enctype="multipart/form-data" class="mt-5 p-2">
+        <h1 class="bg-resellroad text-title rounded p-2 text-center"> Modifier un article</h1>
+        <form method="post" enctype="multipart/form-data" class="mt-5 p-2 bg-light rounded">
             <p>
                 <label for="titre" class="form-label">Titre de l'article</label>
                 <input type="text" name="titre" id="titre" class="form-control" placeholder="<?= $d1->item_title ?>" maxlength="60">

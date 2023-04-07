@@ -1,7 +1,7 @@
 <section id="selectItem">
     <div class="container p-4">
 
-<h1 class="text-center mb-3"><?= $d1->project_title ?></h1>
+<h1 class="text-center bg-resellroad text-title rounded p-2 mb-3"><?= $d1->project_title ?></h1>
 
 <?php
  while ( $items = $d2->fetch(PDO::FETCH_OBJ) ){

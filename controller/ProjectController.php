@@ -10,6 +10,7 @@
     public function projects($index){
 
         $titleF = "Mes ventes - Resell Road";
+        $d1='';
         $d2='';
 
         $dataCheck =$this->userCheckOut();
@@ -22,7 +23,7 @@
           $this->render('sales', $titleF ,$d1 , $d2, $dataCheck[0] , $dataCheck[1] , $dataCheck[2] , '' , true);
 
          } else {
-          header('location: index.php?page=home');
+          header('location: index.php?page=sales&id=0');
           exit();
  
         

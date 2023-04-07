@@ -10,15 +10,15 @@
 
         <div id="intro-Pt1">
             <div class="def p-2">
-                <h1 class="p-3 titre mb-4"> 1 - Qu'est-ce que le resell?</h1>
+                <h1 class="p-3 bg-resellroad text-title h2 mb-4"> 1 - Qu'est-ce que le resell?</h1>
                 <p class="lead text-sm-start"> Dans sa forme la plus simple, la revente consiste à posséder un article
                     extrêmement
                     demandé, généralement en version limitée, et à le revendre à un prix plus élevé à ceux qui n'ont pas
                     pu
                     se le procurer. 3 Etapes sont nécessaires si on veut comprendre le resell </p>
                 <div>
-                    <img class="w-25 h-25" src="/public/assets/img/resell1.jpg">
                     
+
                 </div>
 
             </div>
@@ -70,10 +70,11 @@
 
             <div id="intro-pt2" class="container mt-5">
 
-                <h1 class="titre p-3">2 - Objectif</h1>
-                <p class="lead mt-4">Chaque jour je vous partagerais mes trouvailles et mes gains dans le but d'arriver à un
+                <h1 class="bg-resellroad text-title h2 p-3">2 - Objectif</h1>
+                <p class="lead mt-4">Chaque jour je vous partagerais mes trouvailles et mes gains dans le but d'arriver
+                    à un
                     objectif
-                    financier en partant de 10 euros jusqu'a un objectif. Tout ça aura pour but de vous montrer qu'il
+                    financier en partant de 10 euros jusqu'a un objectif. Tout ça aura pour but de montrer qu'il
                     est possible à n'importe qui de s'enrichir grâce au resell</p>
                 <div class="row p-3">
 
@@ -142,7 +143,7 @@
 
             </div>
             <div class="mt-5 container " id="intro-pt3">
-                <h1 class="titre p-3">3 - Ressources Utiles</h1>
+                <h1 class="bg-resellroad text-title h2 p-3">3 - Ressources Utiles</h1>
 
                 <div class="row align-items mt-5">
                     <div class="col-lg">
@@ -157,13 +158,18 @@
 
                             <!-- Corps -->
                             <div class="card-body">
-                                <h5 class="card-title">Titre</h5>
-                                <h6 class="card-subtitle text-muted">Destination</h6>
-                                <p class="card-text">Ceci est un exemple de carte
-                                    que Bootstrap nous permet de créer.
+                                <h5 class="card-title fw-bolder">COMMENCER LE RESELL DE SNEAKERS EN 2O22 - LE GUIDE
+                                    COMPLET</h5>
+                                <h6 class="card-subtitle fw-bold text-muted">Felix Beauregard</h6>
+                                <p class="card-text">1 EBOOK GRATUIT A 1 COMMENTAIRE ALEATOIRE 💬
+
+                                    POUR COP TA SNEAKERS DM ICI 📩 https://www.instagram.com/centrale_sn...
+
+                                    ABONNE-TOI EN CLIQUANT ICI : https://urlz.fr/hnG0
+
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
-                                <a href="#" class="card-link">Réserver</a>
+                                <a href="https://www.youtube.com/embed/kTtSjj6bv9U" class="card-link">En savoir plus</a>
+
                             </div>
 
                             <!-- Pied -->
@@ -182,13 +188,15 @@
 
                             <!-- Corps -->
                             <div class="card-body">
-                                <h5 class="card-title">Titre</h5>
-                                <h6 class="card-subtitle text-muted">Destination</h6>
-                                <p class="card-text">Ceci est un exemple de carte
-                                    que Bootstrap nous permet de créer.
+                                <h5 class="card-title fw-bolder">Commencer l'ACHAT REVENTE sur VINTED / 3 Façon pour
+                                    commencer le resell vinted</h5>
+                                <h6 class="card-subtitle fw-bold text-muted">JamaisMoelleux</h6>
+                                <p class="card-text">Le resell sur vinted, c'est simple, tu as besoin de 0€, et environ
+                                    2h de temps par jours, je t'explique comment Moi j'ai commencé, et ou j'en suis
+                                    aujourd'hui, 3 façon differente pour faire du resell.
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
-                                <a href="#" class="card-link">Réserver</a>
+                                <a href="https://www.youtube.com/embed/PKcg0JKvbaU" class="card-link">En savoir plus</a>
+
                             </div>
 
 

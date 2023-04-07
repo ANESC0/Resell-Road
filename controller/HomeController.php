@@ -29,7 +29,7 @@ class HomeController extends BaseController {
   }
 
   public function error($error){
-    $titleF = "Accueil";
+    $titleF = "Erreur - Resell Road";
     $d1='';
     $d2='';
    

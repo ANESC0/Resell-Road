@@ -1,0 +1,22 @@
+// faire un theme
+
+
+$theme-colors: (
+  "primary":    #203961,
+  "secondary":  #e1755e,
+  "success":    #87b748,
+  "info":       #d49625,
+  "warning":    #ea9a4a,
+  "danger":     #c73237,
+  "light":      #f9fbfc,
+  'resellroad': #52616b,
+  'title' : #c9d6df,
+  "dark":       #201b22
+) !default;
+
+
+
+// inclure tout boostrap
+@import "../../../vendor/node_modules/bootstrap/scss/bootstrap.scss";
+
+
