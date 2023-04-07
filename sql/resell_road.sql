@@ -128,9 +128,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_pseudo`, `user_email`, `user_password`, `user_secret`, `user_type`, `user_date`) VALUES
-(1, 'anesco', 'anesco.tv@gmail.com', 'aq1ada14563650c1c8ea42e14b6ae9164ec93bd447c25', '20e6bc7b5e05e3296746d412311c6bf4060796241678825925', 1, '2023-03-14'),
-(2, 'john', 'john.admin@gmail.com', 'aq13f98b157a2f5de1b84774795d3d8c213cb467d1c25', '659dcab6186cf88b7401dae26f8aa3eaf97cf2411679764425', 2, '2023-03-25'),
-(3, 'lucas', 'lucas@gmail.com', 'aq120ac771dff442238145de848c37e23511248640325', '0a7cac69ae2d8feba8647b6ae160e3482790320f1680813558', 1, '2023-04-06');
+(1, 'john', 'john.admin@gmail.com', 'aq13f98b157a2f5de1b84774795d3d8c213cb467d1c25', '659dcab6186cf88b7401dae26f8aa3eaf97cf2411679764425', 2, '2023-03-25'),
+(2, 'lucas', 'lucas@gmail.com', 'aq120ac771dff442238145de848c37e23511248640325', '0a7cac69ae2d8feba8647b6ae160e3482790320f1680813558', 1, '2023-04-06');
 
 --
 -- Index pour les tables déchargées
